@@ -25,9 +25,10 @@ class MdstclKernel(Kernel):
                      stream_content = {'name': 'stdout', 'text': str(ans)}
                   else:
                     stream_content = {'name':'stderr','text': '\n'.join([line,str(ans)])}
+                  self.send_response(self.iopub_socket,'stream',stream_content)
             except Exception as e:
                 stream_content = {'name': 'stderr', 'text': str(e)}
-            self.send_response(self.iopub_socket, 'stream', stream_content)
+                self.send_response(self.iopub_socket, 'stream', stream_content)
 
         return {'status': 'ok',
                 # The base class increments the execution count
