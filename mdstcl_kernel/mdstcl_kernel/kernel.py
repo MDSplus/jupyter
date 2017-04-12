@@ -17,12 +17,14 @@ class MdstclKernel(Kernel):
                    allow_stdin=False):
         if not silent:
             try:
-                ans = Data.execute('_status=tcl($1,_out),_out',code)
-                status = int(Data.execute('_status'))
-                if status & 1:
-                    stream_content = {'name': 'stdout', 'text': str(ans)}
-                else:
-                    stream_content = {'name':'stderr','text': str(ans)}
+                lines=code.split('\n')
+                for line in lines:
+                  ans = Data.execute('_status=tcl($1,_out),_out',line)
+                  status = int(Data.execute('_status'))
+                  if status & 1:
+                     stream_content = {'name': 'stdout', 'text': str(ans)}
+                  else:
+                    stream_content = {'name':'stderr','text': '\n'.join(line,str(ans))}
             except Exception as e:
                 stream_content = {'name': 'stderr', 'text': str(e)}
             self.send_response(self.iopub_socket, 'stream', stream_content)
