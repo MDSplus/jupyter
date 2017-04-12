@@ -22,7 +22,7 @@ class MdstclKernel(Kernel):
                 if status & 1:
                     stream_content = {'name': 'stdout', 'text': str(ans)}
                 else:
-                    stream_content = {'name','stderr','text': str(ans)}
+                    stream_content = {'name':'stderr','text': str(ans)}
             except Exception as e:
                 stream_content = {'name': 'stderr', 'text': str(e)}
             self.send_response(self.iopub_socket, 'stream', stream_content)
