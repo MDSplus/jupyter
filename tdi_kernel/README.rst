@@ -10,9 +10,9 @@ Installation
 To install ``tdi_kernel`` ::
 
     git clone http://github.com/MDSplus/jupyter
-    cd tdi_kernel
+    cd jupyter/tdi_kernel
     python setup.py install
-    python -m twf_kernel.install
+    python -m tdi_kernel.install
 
 Using the TDI kernel
 ---------------------
