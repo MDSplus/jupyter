@@ -1,4 +1,4 @@
 from ipykernel.kernelapp import IPKernelApp
-from . import TclKernel
+from . import MdstclKernel
 
-IPKernelApp.launch_instance(kernel_class=TdiKernel)
+IPKernelApp.launch_instance(kernel_class=MdstclKernel)

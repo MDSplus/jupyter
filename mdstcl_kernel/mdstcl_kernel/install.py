@@ -8,7 +8,7 @@ from IPython.utils.tempdir import TemporaryDirectory
 
 kernel_json = {
     "argv": [sys.executable, "-m", "mdstcl_kernel", "-f", "{connection_file}"],
-    "display_name": "Tdi",
+    "display_name": "Mdstcl",
     "language": "text",
 }
 

@@ -14,9 +14,9 @@ To install ``mdstcl_kernel`` ::
     python setup.py install
     python -m mdstcl_kernel.install
 
-Using the TDI kernel
+Using the mdstcl kernel
 ---------------------
-**Notebook**: The *New* menu in the notebook should show an option for a tcl notebook.
+**Notebook**: The *New* menu in the notebook should show an option for a mdstcl notebook.
 
 **Console frontends**: To use it with the console frontends, add ``--kernel mdstcl`` to
 their command line arguments.
